@@ -23,11 +23,8 @@ class Square extends Component {
     console.log("Компонента буде відмонтована");
   }
   render() {
-    return (
-      <div
-        style={{ width: "50px", height: "50px", backgroundColor: "gold" }}
-      ></div>
-    );
+    const style = { width: "50px", height: "50px", backgroundColor: "gold" };
+    return <div style={style}></div>;
   }
 }
 

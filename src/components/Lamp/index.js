@@ -16,12 +16,8 @@ class Lamp extends Component {
     this.setState({ light: !this.state.light });
   };
   render() {
-    return (
-      <div
-        onClick={this.changeLamp}
-        className={this.state.light ? "lamp-on" : "lamp-off"}
-      ></div>
-    );
+    const style = this.state.light ? "lamp-on" : "lamp-off";
+    return <div onClick={this.changeLamp} className={style}></div>;
   }
 }
 

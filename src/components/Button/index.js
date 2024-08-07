@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Square from "../Square.index";
+import Square from "../../Square.index";
 
 class Button extends Component {
   constructor(props) {
@@ -11,11 +11,10 @@ class Button extends Component {
   };
 
   render() {
+    const lampState = this.state.f ? <Square /> : null;
     return (
       <>
-        <button onClick={this.clickHandler}>
-          X{this.state.f ? <Square /> : null}
-        </button>
+        <button onClick={this.clickHandler}>X{lampState}</button>
       </>
     );
   }
