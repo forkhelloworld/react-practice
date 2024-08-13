@@ -9,19 +9,24 @@ export default class Todo extends Component {
     this.state = {
       tasksList: [],
     };
+
     this.counter = 0;
   }
+
   addTask = (task) => {
     this.setState({
       tasksList: [...this.state.tasksList, { task: task, id: ++this.counter }],
     });
   };
+
   deleteItem = (id) => {
     const newTasksList = this.state.tasksList.filter((task) => {
       return task.id !== id;
     });
+
     this.setState({ tasksList: newTasksList });
   };
+
   render() {
     return (
       <div className="todo wrapper">

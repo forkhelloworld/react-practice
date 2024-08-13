@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import TodoItem from "../TodoItem";
 
-export default function TodoList(props) {
+function TodoList(props) {
   let tasks = props.tasks.map((task) => {
     return (
       <TodoItem
@@ -18,3 +19,11 @@ export default function TodoList(props) {
     </section>
   );
 }
+
+TodoList.propTypes = {
+  task: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  callback: PropTypes.func,
+};
+
+export default TodoList;
