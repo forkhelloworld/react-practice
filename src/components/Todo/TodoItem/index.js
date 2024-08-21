@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./style.scss";
 
 export default function TodoItem(props) {
@@ -12,3 +13,9 @@ export default function TodoItem(props) {
     </li>
   );
 }
+
+TodoItem.propTypes = {
+  task: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  callback: PropTypes.func,
+};

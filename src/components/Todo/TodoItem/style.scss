@@ -1,12 +1,12 @@
 $radius: 5px;
 $padding: 10px;
 
-section {
+.todo-list {
   max-height: 70vh;
   overflow-y: auto;
 }
 
-ul {
+.todo-list ul {
   list-style-type: none;
   padding: 0;
   margin: 0;

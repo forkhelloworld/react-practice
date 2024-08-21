@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-import "./style.css";
+import styles from "./style.module.scss";
 
 export default class Todo extends Component {
   constructor(props) {
@@ -29,12 +29,15 @@ export default class Todo extends Component {
 
   render() {
     return (
-      <div className="todo wrapper">
-        <TodoForm callback={this.addTask} />
-        <TodoList
-          tasks={this.state.tasksList}
-          deleteHandler={this.deleteItem}
-        />
+      <div className={styles["todo-page"]}>
+        <h1>The Best Todo List</h1>
+        <div className={styles.wrapper}>
+          <TodoForm callback={this.addTask} />
+          <TodoList
+            tasks={this.state.tasksList}
+            deleteHandler={this.deleteItem}
+          />
+        </div>
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import TodoItem from "../TodoItem";
 
 function TodoList(props) {
@@ -14,16 +13,10 @@ function TodoList(props) {
     );
   });
   return (
-    <section>
+    <section className="todo-list">
       <ul>{tasks}</ul>
     </section>
   );
 }
-
-TodoList.propTypes = {
-  task: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  callback: PropTypes.func,
-};
 
 export default TodoList;
