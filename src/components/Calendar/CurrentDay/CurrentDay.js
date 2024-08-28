@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import style from "./CurrentDay.module.scss";
 import DateContext from "../../../contexts/DateContext";
+import { format } from "date-fns";
 
 const CurrentDay = () => {
-  const day = useContext(DateContext).getDate();
+  const date = useContext(DateContext);
   return (
     <div className={style.day}>
-      <h2>Понеділок</h2>
-      <p>{day}</p>
+      <h2>{format(date, "eeee")}</h2>
+      <p>{date.getDate()}</p>
     </div>
   );
 };

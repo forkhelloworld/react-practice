@@ -17,11 +17,13 @@ const Month = (props) => {
   lettersList = lettersList.map((letter) => {
     return <th key={letterKey++}>{letter}</th>;
   });
+
   const date = useContext(DateContext);
   const weeksCount = getWeeksInMonth(date);
   const daysInMonth = getDaysInMonth(date);
   let month = [];
   let day = 1 - getDay(startOfMonth(date));
+
   for (let week = 0; week <= weeksCount - 1; week++) {
     month.push([]);
     for (day; month[week].length < 7; day++) {
@@ -32,13 +34,12 @@ const Month = (props) => {
       }
     }
   }
+
   const chooseMonth = (event) => {
-    let newDate;
-    event.target.textContent === ">"
-      ? (newDate = addMonths(date, 1))
-      : (newDate = addMonths(date, -1));
+    const newDate = addMonths(event.target.textContent === ">" ? 1 : -1);
     props.callback(newDate);
   };
+
   let weeks = month.map((week) => (
     <Week
       callback={props.callback}
